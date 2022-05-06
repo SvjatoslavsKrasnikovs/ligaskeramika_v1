@@ -1,25 +1,19 @@
-import {useEffect} from "react";
-import {Header} from './components/Header.js';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import Section from './components/Section';
+import Footer from './components/Footer';
+
+import styles from './App.module.css';
 
 let App = () => {
-  useEffect(()=>{
-    fetch('http://localhost:5000/api/test',{
-      'methods':'GET',
-      headers : {
-        'Content-Type':'application/json'
-      }
-    })
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(error => console.log(error))
-
-  },[])
 
   return(
-    <Header>Header</Header>
-    //<Navbar>Navbar</Navbar>
-    //<Section>Section</Section>
-    //<Footer>Footer</Footer>
+    <div className={styles.container}>
+      <Header />
+      <Navigation />
+      <Section />
+      <Footer />
+    </div>
   )
 }
 
